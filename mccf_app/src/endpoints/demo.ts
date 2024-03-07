@@ -44,27 +44,8 @@ export function submitVote(request: ccfapp.Request<ModelVoteRequest>): ccfapp.Re
     }
 }
 
-export function getModel(request: ccfapp.Request): ccfapp.Response<ModelGetResponse> {
-    // access request details
-    let body;
-    try {
-      body = request.body.json();
-    } catch {
-      return {
-        statusCode: 400,
-      };
-    }
-  
-    const modelName = body.modelName;
-
-    // ModelName either model_a or model_b
-    if (modelName.toLowerCase() != "model_a" || modelName.toLowerCase() != "model_b")
-    {
-        return {
-            statusCode: 400,
-        }
-    }
-
+export function getModel(request: ccfapp.Request): ccfapp.Response<ModelGetResponse> 
+{
     let votesModelA = MODEL_VOTE_TABLE.get(MODEL_NAME_A) || 0;
     let votesModelB = MODEL_VOTE_TABLE.get(MODEL_NAME_B) || 0;
     let selectedModel = MODEL_NAME_A;
