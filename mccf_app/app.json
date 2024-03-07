@@ -1,0 +1,48 @@
+{
+    "endpoints": {
+      "/vote": {
+        "post": {
+            "js_module": "endpoints/demo.js",
+            "js_function": "submitVote",
+            "forwarding_required": "sometimes",
+            "authn_policies": ["member_cert"],
+            "mode": "readwrite",
+            "openapi": {
+              "responses": {
+                "200": {
+                  "description": "Ok",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                      }
+                    }
+                  }
+                }
+              },
+              "security": [],
+              "parameters": []
+            }
+          }  
+      },
+      "/getModel": 
+      {
+        "get": {
+          "js_module": "endpoints/demo.js",
+          "js_function": "getModel",
+          "forwarding_required": "always",
+          "authn_policies": ["user_cert"],
+          "mode": "readonly",
+          "openapi": 
+          {
+            "responses": {
+              "200": {
+                "description": "Ok"
+              }
+            },
+            "security": [],
+            "parameters": []
+          }
+      }
+    }
+  }
+}
