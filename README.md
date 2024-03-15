@@ -1,1 +1,1 @@
-# diabests_detect
+# diabetes_detect
