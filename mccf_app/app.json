@@ -4,7 +4,7 @@
         "post": {
             "js_module": "endpoints/demo.js",
             "js_function": "submitVote",
-            "forwarding_required": "sometimes",
+            "forwarding_required": "always",
             "authn_policies": ["member_cert"],
             "mode": "readwrite",
             "openapi": {
